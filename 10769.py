@@ -1,0 +1,5 @@
+s=input();a=s.count(":-)");b=s.count(":-(")
+if a>b:print("happy")
+elif a<b:print("sad")
+elif a==0 and b==0:print("none")
+else:print("unsure")

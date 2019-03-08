@@ -1,0 +1,11 @@
+a=list(map(int,input().split()))
+b=list(map(int,input().split()))
+y=b[0]-a[0];m=b[1]-a[1];d=b[2]-a[2]
+if y>0 and m>0:print(y)
+elif y>0 and m==0 and d>0:print(y)
+elif y>0 and m==0 and d<0:print(y-1)
+elif y>0 and m==0 and d==0:print(y)
+elif y>0 and m<0:print(y-1)
+else:print(0)
+print(y+1)
+print(y if y>0 else 0)
