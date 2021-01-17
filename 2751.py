@@ -1,5 +1,7 @@
 import time
-
+import sys
+import random
+sys.setrecursionlimit(10**6)
 # Solution 1 (Pypy3)
 # arr = []
 #
@@ -34,26 +36,39 @@ import time
 # print(time.time()-s)
 
 # Solution 3 (Quick Sort)
-def quick_sort(arr, start, end):
-    if start >= end: # If only one element left
-        return
-    pivot = start
-    left = start + 1
-    right = end
-    while left <= right:
-        while left <= end and arr[left] <= arr[pivot]:
-            left += 1
-        while right > pivot and arr[right] >= arr[pivot]:
-            right -= 1
-        if left > right: # if they are crossed
-            arr[right], arr[pivot] = arr[pivot], arr[right]
-        else: # if they are not crossed
-            arr[left], arr[right] = arr[right], arr[left]
-    quick_sort(arr, start, right - 1)
-    quick_sort(arr, right + 1, end)
+# def quick_sort(arr, start, end):
+#     if start >= end: # If only one element left
+#         return
+#     pivot = random.randint(start, end)
+#     left = start
+#     right = end
+#     while left <= right:
+#         while left <= pivot and arr[left] <= arr[pivot]:
+#             left += 1
+#         while right > pivot and arr[right] >= arr[pivot]:
+#             right -= 1
+#         if left > pivot: # if they are crossed
+#             arr[right], arr[pivot] = arr[pivot], arr[right]
+#         else: # if they are not crossed
+#             arr[left], arr[right] = arr[right], arr[left]
+#     quick_sort(arr, start, right - 1)
+#     quick_sort(arr, right + 1, end)
+#
+# arr = []
+# for _ in range(int(input())):
+#     arr.append(int(input()))
+#
+# quick_sort(arr, 0, len(arr) - 1)
+# print(*arr, sep="\n")
 
-arr = []
-for _ in range(int(input())):
-    arr.append(int(input()))
-quick_sort(arr, 0, len(arr) - 1)
-print(*arr, sep="\n")
+# Solution 4 (Input format change)
+# Use the same quick_sort, but change the way to Input
+# s = time.time()
+# arr = []
+# N = 20
+# for _ in range(N):
+#     arr.append(random.randint(0,N))
+# quick_sort(arr, 0, len(arr) - 1)
+# a = time.time()-s
+# print(arr)
+# print(a)
